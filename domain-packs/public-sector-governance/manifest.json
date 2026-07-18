@@ -1,0 +1,57 @@
+{
+  "id": "public-sector-governance",
+  "name": "Public-Sector Governance",
+  "version": "0.1.0",
+  "vertical": "public_sector_governance",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "public-sector-governance.workflow.procurement-conflict-review-complete",
+      "label": "Procurement Conflict Review Complete",
+      "description": "Synthetic Policy IR material for procurement conflict review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/public-sector-governance-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "public-sector-governance.obligation.procurement-conflict-review-complete",
+      "label": "Procurement Conflict Review Complete",
+      "description": "Synthetic Policy IR material for procurement conflict review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/public-sector-governance-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "public-sector-governance.evidence.procurement-conflict-review-complete",
+      "label": "Procurement Conflict Review Complete",
+      "description": "Synthetic Policy IR material for procurement conflict review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/public-sector-governance-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "public-sector-governance.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

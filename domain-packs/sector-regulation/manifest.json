@@ -1,0 +1,84 @@
+{
+  "id": "sector-regulation",
+  "name": "Sector Regulation",
+  "version": "0.1.0",
+  "vertical": "sector_regulation",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "sector-regulation.workflow.financial-services-licence-review-complete",
+      "label": "Financial Services Licence Review Complete",
+      "description": "Synthetic Policy IR material for financial services licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    },
+    {
+      "id": "sector-regulation.workflow.healthcare-licence-review-complete",
+      "label": "Healthcare Licence Review Complete",
+      "description": "Synthetic Policy IR material for healthcare licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "sector-regulation.obligation.financial-services-licence-review-complete",
+      "label": "Financial Services Licence Review Complete",
+      "description": "Synthetic Policy IR material for financial services licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    },
+    {
+      "id": "sector-regulation.obligation.healthcare-licence-review-complete",
+      "label": "Healthcare Licence Review Complete",
+      "description": "Synthetic Policy IR material for healthcare licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "sector-regulation.evidence.financial-services-licence-review-complete",
+      "label": "Financial Services Licence Review Complete",
+      "description": "Synthetic Policy IR material for financial services licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    },
+    {
+      "id": "sector-regulation.evidence.healthcare-licence-review-complete",
+      "label": "Healthcare Licence Review Complete",
+      "description": "Synthetic Policy IR material for healthcare licence review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/sector-regulation-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "sector-regulation.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

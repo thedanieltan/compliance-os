@@ -1,0 +1,57 @@
+{
+  "id": "quality-management",
+  "name": "Quality Management",
+  "version": "0.1.0",
+  "vertical": "quality_management",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "quality-management.workflow.capa-effectiveness-confirmed",
+      "label": "Capa Effectiveness Confirmed",
+      "description": "Synthetic Policy IR material for capa effectiveness confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/quality-management-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "quality-management.obligation.capa-effectiveness-confirmed",
+      "label": "Capa Effectiveness Confirmed",
+      "description": "Synthetic Policy IR material for capa effectiveness confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/quality-management-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "quality-management.evidence.capa-effectiveness-confirmed",
+      "label": "Capa Effectiveness Confirmed",
+      "description": "Synthetic Policy IR material for capa effectiveness confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/quality-management-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "quality-management.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

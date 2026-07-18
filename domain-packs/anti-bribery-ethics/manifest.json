@@ -1,0 +1,57 @@
+{
+  "id": "anti-bribery-ethics",
+  "name": "Anti-Bribery and Ethics",
+  "version": "0.1.0",
+  "vertical": "anti_bribery_ethics",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "anti-bribery-ethics.workflow.conflict-declarations-complete",
+      "label": "Conflict Declarations Complete",
+      "description": "Synthetic Policy IR material for conflict declarations complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/anti-bribery-ethics-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "anti-bribery-ethics.obligation.conflict-declarations-complete",
+      "label": "Conflict Declarations Complete",
+      "description": "Synthetic Policy IR material for conflict declarations complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/anti-bribery-ethics-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "anti-bribery-ethics.evidence.conflict-declarations-complete",
+      "label": "Conflict Declarations Complete",
+      "description": "Synthetic Policy IR material for conflict declarations complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/anti-bribery-ethics-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "anti-bribery-ethics.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

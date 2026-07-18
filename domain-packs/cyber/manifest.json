@@ -2,16 +2,110 @@
   "id": "cyber",
   "name": "Cybersecurity Governance",
   "version": "0.1.0",
-  "vertical": "cybersecurity",
+  "vertical": "cyber",
   "status": "experimental",
   "records": [],
   "capabilities": [],
   "schemas": [],
-  "workflows": [],
-  "obligations": [],
-  "evidence": [],
+  "workflows": [
+    {
+      "id": "cyber.workflow.access-review-complete",
+      "label": "Access Review Complete",
+      "description": "Synthetic Policy IR material for access review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.workflow.critical-vulnerabilities-within-limit",
+      "label": "Critical Vulnerabilities Within Limit",
+      "description": "Synthetic Policy IR material for critical vulnerabilities within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.workflow.incident-response-tested",
+      "label": "Incident Response Tested",
+      "description": "Synthetic Policy IR material for incident response tested.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "cyber.obligation.access-review-complete",
+      "label": "Access Review Complete",
+      "description": "Synthetic Policy IR material for access review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.obligation.critical-vulnerabilities-within-limit",
+      "label": "Critical Vulnerabilities Within Limit",
+      "description": "Synthetic Policy IR material for critical vulnerabilities within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.obligation.incident-response-tested",
+      "label": "Incident Response Tested",
+      "description": "Synthetic Policy IR material for incident response tested.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "cyber.evidence.access-review-complete",
+      "label": "Access Review Complete",
+      "description": "Synthetic Policy IR material for access review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.evidence.critical-vulnerabilities-within-limit",
+      "label": "Critical Vulnerabilities Within Limit",
+      "description": "Synthetic Policy IR material for critical vulnerabilities within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    },
+    {
+      "id": "cyber.evidence.incident-response-tested",
+      "label": "Incident Response Tested",
+      "description": "Synthetic Policy IR material for incident response tested.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/cyber-reference-min.json"
+      }
+    }
+  ],
   "permissions": [],
   "surfaces": [],
   "migrations": [],
-  "tests": []
+  "tests": [
+    {
+      "id": "cyber.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
 }

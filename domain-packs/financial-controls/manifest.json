@@ -1,0 +1,111 @@
+{
+  "id": "financial-controls",
+  "name": "Financial Controls and Internal Audit",
+  "version": "0.1.0",
+  "vertical": "financial_controls",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "financial-controls.workflow.journal-approval-complete",
+      "label": "Journal Approval Complete",
+      "description": "Synthetic Policy IR material for journal approval complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.workflow.reconciliation-breaks-within-limit",
+      "label": "Reconciliation Breaks Within Limit",
+      "description": "Synthetic Policy IR material for reconciliation breaks within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.workflow.segregation-review-complete",
+      "label": "Segregation Review Complete",
+      "description": "Synthetic Policy IR material for segregation review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "financial-controls.obligation.journal-approval-complete",
+      "label": "Journal Approval Complete",
+      "description": "Synthetic Policy IR material for journal approval complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.obligation.reconciliation-breaks-within-limit",
+      "label": "Reconciliation Breaks Within Limit",
+      "description": "Synthetic Policy IR material for reconciliation breaks within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.obligation.segregation-review-complete",
+      "label": "Segregation Review Complete",
+      "description": "Synthetic Policy IR material for segregation review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "financial-controls.evidence.journal-approval-complete",
+      "label": "Journal Approval Complete",
+      "description": "Synthetic Policy IR material for journal approval complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.evidence.reconciliation-breaks-within-limit",
+      "label": "Reconciliation Breaks Within Limit",
+      "description": "Synthetic Policy IR material for reconciliation breaks within limit.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    },
+    {
+      "id": "financial-controls.evidence.segregation-review-complete",
+      "label": "Segregation Review Complete",
+      "description": "Synthetic Policy IR material for segregation review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/financial-controls-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "financial-controls.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

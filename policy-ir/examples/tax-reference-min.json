@@ -1,0 +1,249 @@
+{
+  "package_manifest": {
+    "package_id": "tax-reference-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": {
+      "class": "OPEN"
+    },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "tax:obligation.reference",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      }
+    },
+    {
+      "artifact_id": "tax:control.reference",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN control for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "tax:obligation.reference",
+          "required": true,
+          "relation": "operationalizes"
+        }
+      ]
+    },
+    {
+      "artifact_id": "tax:evidence.reference",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN evidence contract for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "tax:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ]
+    },
+    {
+      "artifact_id": "tax:fact.taxable-base-reconciled",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "tax:rule.taxable-base-reconciled",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "tax:fact.taxable-base-reconciled",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "tax:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "tax:fact.taxable-base-reconciled",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "tax:fact.filing-days-late",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "NUMBER"
+      }
+    },
+    {
+      "artifact_id": "tax:rule.filing-days-late",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "tax:fact.filing-days-late",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "tax:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "tax:fact.filing-days-late",
+            "operator": "LESS_THAN_OR_EQUAL",
+            "value": 0
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "tax:fact.filing-submitted-by-deadline",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "TIMESTAMP"
+      }
+    },
+    {
+      "artifact_id": "tax:rule.filing-submitted-by-deadline",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Tax Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "tax:fact.filing-submitted-by-deadline",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "tax:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "tax:fact.filing-submitted-by-deadline",
+            "operator": "LESS_THAN_OR_EQUAL",
+            "value": "2026-07-31T00:00:00.000Z"
+          }
+        }
+      }
+    }
+  ]
+}

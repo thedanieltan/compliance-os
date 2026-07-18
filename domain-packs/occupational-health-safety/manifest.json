@@ -1,0 +1,57 @@
+{
+  "id": "occupational-health-safety",
+  "name": "Occupational Health and Safety",
+  "version": "0.1.0",
+  "vertical": "occupational_health_safety",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "occupational-health-safety.workflow.corrective-actions-overdue",
+      "label": "Corrective Actions Overdue",
+      "description": "Synthetic Policy IR material for corrective actions overdue.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/occupational-health-safety-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "occupational-health-safety.obligation.corrective-actions-overdue",
+      "label": "Corrective Actions Overdue",
+      "description": "Synthetic Policy IR material for corrective actions overdue.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/occupational-health-safety-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "occupational-health-safety.evidence.corrective-actions-overdue",
+      "label": "Corrective Actions Overdue",
+      "description": "Synthetic Policy IR material for corrective actions overdue.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/occupational-health-safety-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "occupational-health-safety.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

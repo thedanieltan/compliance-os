@@ -1,0 +1,57 @@
+{
+  "id": "employment-labour",
+  "name": "Employment and Labour Compliance",
+  "version": "0.1.0",
+  "vertical": "employment_labour",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "employment-labour.workflow.payroll-review-complete",
+      "label": "Payroll Review Complete",
+      "description": "Synthetic Policy IR material for payroll review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/employment-labour-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "employment-labour.obligation.payroll-review-complete",
+      "label": "Payroll Review Complete",
+      "description": "Synthetic Policy IR material for payroll review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/employment-labour-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "employment-labour.evidence.payroll-review-complete",
+      "label": "Payroll Review Complete",
+      "description": "Synthetic Policy IR material for payroll review complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/employment-labour-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "employment-labour.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

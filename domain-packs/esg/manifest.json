@@ -1,17 +1,57 @@
 {
   "id": "esg",
-  "name": "Environmental, Social, and Governance",
+  "name": "ESG and Sustainability",
   "version": "0.1.0",
   "vertical": "esg",
   "status": "experimental",
   "records": [],
   "capabilities": [],
   "schemas": [],
-  "workflows": [],
-  "obligations": [],
-  "evidence": [],
+  "workflows": [
+    {
+      "id": "esg.workflow.metric-lineage-complete",
+      "label": "Metric Lineage Complete",
+      "description": "Synthetic Policy IR material for metric lineage complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/esg-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "esg.obligation.metric-lineage-complete",
+      "label": "Metric Lineage Complete",
+      "description": "Synthetic Policy IR material for metric lineage complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/esg-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "esg.evidence.metric-lineage-complete",
+      "label": "Metric Lineage Complete",
+      "description": "Synthetic Policy IR material for metric lineage complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/esg-reference-min.json"
+      }
+    }
+  ],
   "permissions": [],
   "surfaces": [],
   "migrations": [],
-  "tests": []
+  "tests": [
+    {
+      "id": "esg.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
 }
