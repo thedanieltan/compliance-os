@@ -7,7 +7,7 @@
   "private": false,
   "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node --test tests/*.test.js",
+    "test": "node --test --test-reporter=dot tests/*.test.js",
     "policy-ir:validate": "node scripts/validate-policy-ir.js",
     "domain-pack:validate": "node scripts/validate-manifests.js --domain-packs-only",
     "domain-pack:strict": "node scripts/validate-manifests.js --strict-domain-packs",
