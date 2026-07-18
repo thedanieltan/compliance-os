@@ -1,0 +1,57 @@
+{
+  "id": "environmental-compliance",
+  "name": "Environmental Compliance",
+  "version": "0.1.0",
+  "vertical": "environmental_compliance",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "environmental-compliance.workflow.permit-limit-exceedances",
+      "label": "Permit Limit Exceedances",
+      "description": "Synthetic Policy IR material for permit limit exceedances.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/environmental-compliance-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "environmental-compliance.obligation.permit-limit-exceedances",
+      "label": "Permit Limit Exceedances",
+      "description": "Synthetic Policy IR material for permit limit exceedances.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/environmental-compliance-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "environmental-compliance.evidence.permit-limit-exceedances",
+      "label": "Permit Limit Exceedances",
+      "description": "Synthetic Policy IR material for permit limit exceedances.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/environmental-compliance-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "environmental-compliance.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

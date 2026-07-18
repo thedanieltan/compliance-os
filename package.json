@@ -5,14 +5,15 @@
   "type": "module",
   "license": "Apache-2.0",
   "private": false,
-  "engines": {
-    "node": ">=20"
-  },
+  "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node --test tests/*.test.js",
+    "test": "node --test --test-reporter=dot tests/*.test.js",
     "policy-ir:validate": "node scripts/validate-policy-ir.js",
     "domain-pack:validate": "node scripts/validate-manifests.js --domain-packs-only",
     "domain-pack:strict": "node scripts/validate-manifests.js --strict-domain-packs",
+    "domain-material:generate": "node scripts/generate-domain-reference-material.js",
+    "domain-material:check": "node scripts/generate-domain-reference-material.js && git diff --exit-code -- domain-packs policy-ir/examples",
+    "public-release:validate": "node scripts/validate-public-release.js",
     "demo": "node examples/policy-evaluation-demo.js"
   }
 }

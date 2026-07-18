@@ -1,0 +1,57 @@
+{
+  "id": "business-continuity",
+  "name": "Business Continuity and Resilience",
+  "version": "0.1.0",
+  "vertical": "business_continuity",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "business-continuity.workflow.recovery-exercise-complete",
+      "label": "Recovery Exercise Complete",
+      "description": "Synthetic Policy IR material for recovery exercise complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/business-continuity-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "business-continuity.obligation.recovery-exercise-complete",
+      "label": "Recovery Exercise Complete",
+      "description": "Synthetic Policy IR material for recovery exercise complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/business-continuity-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "business-continuity.evidence.recovery-exercise-complete",
+      "label": "Recovery Exercise Complete",
+      "description": "Synthetic Policy IR material for recovery exercise complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/business-continuity-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "business-continuity.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

@@ -7,11 +7,105 @@
   "records": [],
   "capabilities": [],
   "schemas": [],
-  "workflows": [],
-  "obligations": [],
-  "evidence": [],
+  "workflows": [
+    {
+      "id": "ai-governance.workflow.impact-assessment-complete",
+      "label": "Impact Assessment Complete",
+      "description": "Synthetic Policy IR material for impact assessment complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.workflow.human-oversight-confirmed",
+      "label": "Human Oversight Confirmed",
+      "description": "Synthetic Policy IR material for human oversight confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.workflow.unresolved-high-risk-findings",
+      "label": "Unresolved High Risk Findings",
+      "description": "Synthetic Policy IR material for unresolved high risk findings.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "ai-governance.obligation.impact-assessment-complete",
+      "label": "Impact Assessment Complete",
+      "description": "Synthetic Policy IR material for impact assessment complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.obligation.human-oversight-confirmed",
+      "label": "Human Oversight Confirmed",
+      "description": "Synthetic Policy IR material for human oversight confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.obligation.unresolved-high-risk-findings",
+      "label": "Unresolved High Risk Findings",
+      "description": "Synthetic Policy IR material for unresolved high risk findings.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ai-governance.evidence.impact-assessment-complete",
+      "label": "Impact Assessment Complete",
+      "description": "Synthetic Policy IR material for impact assessment complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.evidence.human-oversight-confirmed",
+      "label": "Human Oversight Confirmed",
+      "description": "Synthetic Policy IR material for human oversight confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    },
+    {
+      "id": "ai-governance.evidence.unresolved-high-risk-findings",
+      "label": "Unresolved High Risk Findings",
+      "description": "Synthetic Policy IR material for unresolved high risk findings.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/ai-governance-reference-min.json"
+      }
+    }
+  ],
   "permissions": [],
   "surfaces": [],
   "migrations": [],
-  "tests": []
+  "tests": [
+    {
+      "id": "ai-governance.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
 }

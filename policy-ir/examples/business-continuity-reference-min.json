@@ -1,0 +1,133 @@
+{
+  "package_manifest": {
+    "package_id": "business-continuity-reference-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": {
+      "class": "OPEN"
+    },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "business-continuity:obligation.reference",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for Business Continuity and Resilience.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      }
+    },
+    {
+      "artifact_id": "business-continuity:control.reference",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN control for Business Continuity and Resilience.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "business-continuity:obligation.reference",
+          "required": true,
+          "relation": "operationalizes"
+        }
+      ]
+    },
+    {
+      "artifact_id": "business-continuity:evidence.reference",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN evidence contract for Business Continuity and Resilience.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "business-continuity:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ]
+    },
+    {
+      "artifact_id": "business-continuity:fact.recovery-exercise-complete",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Business Continuity and Resilience.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "business-continuity:rule.recovery-exercise-complete",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Business Continuity and Resilience.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "business-continuity:fact.recovery-exercise-complete",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "business-continuity:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "business-continuity:fact.recovery-exercise-complete",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    }
+  ]
+}

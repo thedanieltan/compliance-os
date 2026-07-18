@@ -1,0 +1,248 @@
+{
+  "package_manifest": {
+    "package_id": "financial-controls-reference-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": {
+      "class": "OPEN"
+    },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "financial-controls:obligation.reference",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      }
+    },
+    {
+      "artifact_id": "financial-controls:control.reference",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN control for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "financial-controls:obligation.reference",
+          "required": true,
+          "relation": "operationalizes"
+        }
+      ]
+    },
+    {
+      "artifact_id": "financial-controls:evidence.reference",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN evidence contract for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "financial-controls:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ]
+    },
+    {
+      "artifact_id": "financial-controls:fact.journal-approval-complete",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "financial-controls:rule.journal-approval-complete",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "financial-controls:fact.journal-approval-complete",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "financial-controls:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "financial-controls:fact.journal-approval-complete",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "financial-controls:fact.reconciliation-breaks-within-limit",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "NUMBER"
+      }
+    },
+    {
+      "artifact_id": "financial-controls:rule.reconciliation-breaks-within-limit",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "financial-controls:fact.reconciliation-breaks-within-limit",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "financial-controls:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "financial-controls:fact.reconciliation-breaks-within-limit",
+            "operator": "LESS_THAN_OR_EQUAL",
+            "value": 0
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "financial-controls:fact.segregation-review-complete",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "financial-controls:rule.segregation-review-complete",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Financial Controls and Internal Audit.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "financial-controls:fact.segregation-review-complete",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "financial-controls:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "financial-controls:fact.segregation-review-complete",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    }
+  ]
+}

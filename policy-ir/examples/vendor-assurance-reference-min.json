@@ -1,0 +1,248 @@
+{
+  "package_manifest": {
+    "package_id": "vendor-assurance-reference-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": {
+      "class": "OPEN"
+    },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "vendor-assurance:obligation.reference",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:control.reference",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN control for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "vendor-assurance:obligation.reference",
+          "required": true,
+          "relation": "operationalizes"
+        }
+      ]
+    },
+    {
+      "artifact_id": "vendor-assurance:evidence.reference",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN evidence contract for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "vendor-assurance:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ]
+    },
+    {
+      "artifact_id": "vendor-assurance:fact.due-diligence-complete",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:rule.due-diligence-complete",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "vendor-assurance:fact.due-diligence-complete",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "vendor-assurance:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "vendor-assurance:fact.due-diligence-complete",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:fact.assurance-evidence-current",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:rule.assurance-evidence-current",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "vendor-assurance:fact.assurance-evidence-current",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "vendor-assurance:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "vendor-assurance:fact.assurance-evidence-current",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:fact.remediation-overdue-count",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "NUMBER"
+      }
+    },
+    {
+      "artifact_id": "vendor-assurance:rule.remediation-overdue-count",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Vendor Assurance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "vendor-assurance:fact.remediation-overdue-count",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "vendor-assurance:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "vendor-assurance:fact.remediation-overdue-count",
+            "operator": "LESS_THAN_OR_EQUAL",
+            "value": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "records-management",
+  "name": "Records and Information Governance",
+  "version": "0.1.0",
+  "vertical": "records_management",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "records-management.workflow.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.workflow.legal-hold-respected",
+      "label": "Legal Hold Respected",
+      "description": "Synthetic Policy IR material for legal hold respected.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.workflow.overdue-disposition-reviews",
+      "label": "Overdue Disposition Reviews",
+      "description": "Synthetic Policy IR material for overdue disposition reviews.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "records-management.obligation.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.obligation.legal-hold-respected",
+      "label": "Legal Hold Respected",
+      "description": "Synthetic Policy IR material for legal hold respected.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.obligation.overdue-disposition-reviews",
+      "label": "Overdue Disposition Reviews",
+      "description": "Synthetic Policy IR material for overdue disposition reviews.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "records-management.evidence.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.evidence.legal-hold-respected",
+      "label": "Legal Hold Respected",
+      "description": "Synthetic Policy IR material for legal hold respected.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    },
+    {
+      "id": "records-management.evidence.overdue-disposition-reviews",
+      "label": "Overdue Disposition Reviews",
+      "description": "Synthetic Policy IR material for overdue disposition reviews.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/records-management-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "records-management.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

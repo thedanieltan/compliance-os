@@ -22,10 +22,11 @@ The current release includes:
 - execution-class and bounded-decision contracts;
 - deterministic bundle compilation and hashing;
 - a fail-closed native reference evaluator;
-- the existing domain-pack manifest structure;
-- a runnable DPM reference package;
-- experimental donor-main manifests for cybersecurity, vendor assurance, AI governance, ESG and KYC;
-- normative Policy-as-Code documents;
+- neutral requirement, obligation, assessment, finding and remediation records;
+- evidence provenance, independent review, expiry and supersession;
+- approval authority, dual control and audit-event binding;
+- 20 strict-loadable domain packs with synthetic OPEN reference material;
+- public-release validation against common credential, local-path and private-network leakage;
 - public tests and GitHub-hosted CI.
 
 A policy decision does not mutate authoritative state. Enforcement, connectors, generated workspaces and production deployment are outside the current release boundary.
@@ -38,7 +39,10 @@ Requires Node.js 20 or later.
 npm install
 npm test
 npm run policy-ir:validate
+npm run domain-pack:validate
 npm run domain-pack:strict
+npm run domain-material:check
+npm run public-release:validate
 npm run demo
 ```
 
@@ -47,6 +51,9 @@ npm run demo
 - `policy-ir/` — canonical Policy IR schema, validation and examples.
 - `packages/policy-compiler/` — deterministic canonical compiler.
 - `packages/policy-evaluator/` — native fail-closed reference evaluator.
+- `packages/compliance-object-primitives/` — neutral compliance records and graph projection.
+- `packages/evidence-provenance/` — evidence provenance, integrity and review lifecycle.
+- `packages/approval-primitives/` — approval authority and delegation records.
 - `packages/domain-pack-loader/` — strict domain-pack manifest loading.
 - `decision-effect/` — bounded decision contract.
 - `execution-classes/` — automation-authority taxonomy.

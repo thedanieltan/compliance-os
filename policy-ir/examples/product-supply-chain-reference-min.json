@@ -1,0 +1,133 @@
+{
+  "package_manifest": {
+    "package_id": "product-supply-chain-reference-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": {
+      "class": "OPEN"
+    },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "product-supply-chain:obligation.reference",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for Product and Supply-Chain Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      }
+    },
+    {
+      "artifact_id": "product-supply-chain:control.reference",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN control for Product and Supply-Chain Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "product-supply-chain:obligation.reference",
+          "required": true,
+          "relation": "operationalizes"
+        }
+      ]
+    },
+    {
+      "artifact_id": "product-supply-chain:evidence.reference",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN evidence contract for Product and Supply-Chain Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "product-supply-chain:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ]
+    },
+    {
+      "artifact_id": "product-supply-chain:fact.supplier-conformity-confirmed",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for Product and Supply-Chain Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "body": {
+        "value_type": "BOOLEAN"
+      }
+    },
+    {
+      "artifact_id": "product-supply-chain:rule.supplier-conformity-confirmed",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN deterministic rule for Product and Supply-Chain Compliance.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": {
+        "class": "OPEN"
+      },
+      "references": [
+        {
+          "ref": "product-supply-chain:fact.supplier-conformity-confirmed",
+          "required": true,
+          "relation": "consumes"
+        },
+        {
+          "ref": "product-supply-chain:control.reference",
+          "required": true,
+          "relation": "assesses"
+        }
+      ],
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": {
+            "fact": "product-supply-chain:fact.supplier-conformity-confirmed",
+            "operator": "IS_TRUE"
+          }
+        }
+      }
+    }
+  ]
+}

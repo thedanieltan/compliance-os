@@ -2,30 +2,110 @@
   "id": "dpm",
   "name": "Data Protection Management",
   "version": "0.1.0",
-  "vertical": "data_protection_management",
+  "vertical": "dpm",
   "status": "experimental",
   "records": [],
   "capabilities": [],
   "schemas": [],
   "workflows": [
     {
-      "id": "dpm.workflow.ropa-completeness",
-      "label": "RoPA completeness",
-      "description": "Evaluate whether the required RoPA facts are complete.",
-      "ref": { "type": "policy-ir-example", "target": "policy-ir/examples/dpm-ropa-completeness-min.json" }
+      "id": "dpm.workflow.ropa-complete",
+      "label": "Ropa Complete",
+      "description": "Synthetic Policy IR material for ropa complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.workflow.processing-activity-registered",
+      "label": "Processing Activity Registered",
+      "description": "Synthetic Policy IR material for processing activity registered.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.workflow.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
     }
   ],
-  "obligations": [],
-  "evidence": [],
+  "obligations": [
+    {
+      "id": "dpm.obligation.ropa-complete",
+      "label": "Ropa Complete",
+      "description": "Synthetic Policy IR material for ropa complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.obligation.processing-activity-registered",
+      "label": "Processing Activity Registered",
+      "description": "Synthetic Policy IR material for processing activity registered.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.obligation.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "dpm.evidence.ropa-complete",
+      "label": "Ropa Complete",
+      "description": "Synthetic Policy IR material for ropa complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.evidence.processing-activity-registered",
+      "label": "Processing Activity Registered",
+      "description": "Synthetic Policy IR material for processing activity registered.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    },
+    {
+      "id": "dpm.evidence.retention-rule-assigned",
+      "label": "Retention Rule Assigned",
+      "description": "Synthetic Policy IR material for retention rule assigned.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/dpm-reference-min.json"
+      }
+    }
+  ],
   "permissions": [],
   "surfaces": [],
   "migrations": [],
   "tests": [
     {
-      "id": "dpm.test.ropa-completeness",
-      "label": "RoPA completeness reference test",
-      "description": "Compiles and evaluates the RoPA completeness Policy IR example.",
-      "ref": { "type": "node-test", "target": "tests/policy-core.test.js" }
+      "id": "dpm.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
     }
   ]
 }

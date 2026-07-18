@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compliance-os:schema:approval-primitives:v1",
+  "title": "ApprovalPrimitiveRecord",
+  "type": "object",
+  "required": ["id", "recordType", "workspaceId", "status", "authority", "scope", "inputs", "guardrails", "nonOverridableInvariants", "lifecycle"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "recordType": { "enum": ["decision", "approval", "rejection", "exception", "waiver", "override", "attestation", "review", "sign_off"] },
+    "workspaceId": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "requested", "in_review", "approved", "rejected", "revoked", "expired", "superseded", "cancelled"] },
+    "authority": { "type": "object" },
+    "scope": { "type": "object" },
+    "inputs": { "type": "object" },
+    "guardrails": { "type": "array" },
+    "nonOverridableInvariants": { "const": ["cannot_self_approve", "cannot_auto_approve", "requires_dual_control", "requires_audit_event"] },
+    "lifecycle": { "type": "object" }
+  }
+}

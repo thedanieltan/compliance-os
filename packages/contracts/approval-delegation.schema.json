@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compliance-os:schema:approval-delegation:v1",
+  "title": "ApprovalDelegationRecord",
+  "type": "object",
+  "required": ["id", "recordType", "workspaceId", "delegatedBy", "delegatedTo", "scope", "effectiveFrom", "effectiveUntil", "status"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "recordType": { "const": "delegation" },
+    "workspaceId": { "type": "string", "minLength": 1 },
+    "delegatedBy": { "type": "string", "minLength": 1 },
+    "delegatedTo": { "type": "string", "minLength": 1 },
+    "scope": { "type": "object" },
+    "effectiveFrom": { "type": "string" },
+    "effectiveUntil": { "type": "string" },
+    "status": { "enum": ["draft", "requested", "in_review", "approved", "rejected", "revoked", "expired", "superseded", "cancelled"] }
+  }
+}

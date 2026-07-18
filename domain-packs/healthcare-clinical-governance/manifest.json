@@ -1,0 +1,57 @@
+{
+  "id": "healthcare-clinical-governance",
+  "name": "Healthcare and Clinical Governance",
+  "version": "0.1.0",
+  "vertical": "healthcare_clinical_governance",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "healthcare-clinical-governance.workflow.clinical-audit-complete",
+      "label": "Clinical Audit Complete",
+      "description": "Synthetic Policy IR material for clinical audit complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/healthcare-clinical-governance-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "healthcare-clinical-governance.obligation.clinical-audit-complete",
+      "label": "Clinical Audit Complete",
+      "description": "Synthetic Policy IR material for clinical audit complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/healthcare-clinical-governance-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "healthcare-clinical-governance.evidence.clinical-audit-complete",
+      "label": "Clinical Audit Complete",
+      "description": "Synthetic Policy IR material for clinical audit complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/healthcare-clinical-governance-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "healthcare-clinical-governance.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

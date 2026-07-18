@@ -1,0 +1,22 @@
+export const DOMAIN_REFERENCE_DOMAINS = Object.freeze([
+  ["dpm", "Data Protection Management", [["ropa-complete", "BOOLEAN", "IS_TRUE", null, true], ["processing-activity-registered", "BOOLEAN", "IS_TRUE", null, true], ["retention-rule-assigned", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["cyber", "Cybersecurity Governance", [["access-review-complete", "BOOLEAN", "IS_TRUE", null, true], ["critical-vulnerabilities-within-limit", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0], ["incident-response-tested", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["financial-controls", "Financial Controls and Internal Audit", [["journal-approval-complete", "BOOLEAN", "IS_TRUE", null, true], ["reconciliation-breaks-within-limit", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0], ["segregation-review-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["vendor-assurance", "Vendor Assurance", [["due-diligence-complete", "BOOLEAN", "IS_TRUE", null, true], ["assurance-evidence-current", "BOOLEAN", "IS_TRUE", null, true], ["remediation-overdue-count", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["ai-governance", "AI Governance", [["impact-assessment-complete", "BOOLEAN", "IS_TRUE", null, true], ["human-oversight-confirmed", "BOOLEAN", "IS_TRUE", null, true], ["unresolved-high-risk-findings", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["records-management", "Records and Information Governance", [["retention-rule-assigned", "BOOLEAN", "IS_TRUE", null, true], ["legal-hold-respected", "BOOLEAN", "IS_TRUE", null, true], ["overdue-disposition-reviews", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["tax", "Tax Compliance", [["taxable-base-reconciled", "BOOLEAN", "IS_TRUE", null, true], ["filing-days-late", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0], ["filing-submitted-by-deadline", "TIMESTAMP", "LESS_THAN_OR_EQUAL", "2026-07-31T00:00:00.000Z", "2026-07-30T12:00:00.000Z"]]],
+  ["employment-labour", "Employment and Labour Compliance", [["payroll-review-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["occupational-health-safety", "Occupational Health and Safety", [["corrective-actions-overdue", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["healthcare-clinical-governance", "Healthcare and Clinical Governance", [["clinical-audit-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["quality-management", "Quality Management", [["capa-effectiveness-confirmed", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["environmental-compliance", "Environmental Compliance", [["permit-limit-exceedances", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["esg", "ESG and Sustainability", [["metric-lineage-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["product-supply-chain", "Product and Supply-Chain Compliance", [["supplier-conformity-confirmed", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["kyc", "KYC and AML", [["due-diligence-current", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["business-continuity", "Business Continuity and Resilience", [["recovery-exercise-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["food-safety", "Food Safety", [["critical-limit-breaches", "NUMBER", "LESS_THAN_OR_EQUAL", 0, 0]]],
+  ["anti-bribery-ethics", "Anti-Bribery and Ethics", [["conflict-declarations-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["sector-regulation", "Sector Regulation", [["financial-services-licence-review-complete", "BOOLEAN", "IS_TRUE", null, true], ["healthcare-licence-review-complete", "BOOLEAN", "IS_TRUE", null, true]]],
+  ["public-sector-governance", "Public-Sector Governance", [["procurement-conflict-review-complete", "BOOLEAN", "IS_TRUE", null, true]]]
+]);

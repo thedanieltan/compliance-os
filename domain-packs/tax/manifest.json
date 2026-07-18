@@ -1,0 +1,111 @@
+{
+  "id": "tax",
+  "name": "Tax Compliance",
+  "version": "0.1.0",
+  "vertical": "tax",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "tax.workflow.taxable-base-reconciled",
+      "label": "Taxable Base Reconciled",
+      "description": "Synthetic Policy IR material for taxable base reconciled.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.workflow.filing-days-late",
+      "label": "Filing Days Late",
+      "description": "Synthetic Policy IR material for filing days late.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.workflow.filing-submitted-by-deadline",
+      "label": "Filing Submitted By Deadline",
+      "description": "Synthetic Policy IR material for filing submitted by deadline.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "tax.obligation.taxable-base-reconciled",
+      "label": "Taxable Base Reconciled",
+      "description": "Synthetic Policy IR material for taxable base reconciled.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.obligation.filing-days-late",
+      "label": "Filing Days Late",
+      "description": "Synthetic Policy IR material for filing days late.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.obligation.filing-submitted-by-deadline",
+      "label": "Filing Submitted By Deadline",
+      "description": "Synthetic Policy IR material for filing submitted by deadline.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "tax.evidence.taxable-base-reconciled",
+      "label": "Taxable Base Reconciled",
+      "description": "Synthetic Policy IR material for taxable base reconciled.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.evidence.filing-days-late",
+      "label": "Filing Days Late",
+      "description": "Synthetic Policy IR material for filing days late.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    },
+    {
+      "id": "tax.evidence.filing-submitted-by-deadline",
+      "label": "Filing Submitted By Deadline",
+      "description": "Synthetic Policy IR material for filing submitted by deadline.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/tax-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "tax.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}

@@ -7,11 +7,105 @@
   "records": [],
   "capabilities": [],
   "schemas": [],
-  "workflows": [],
-  "obligations": [],
-  "evidence": [],
+  "workflows": [
+    {
+      "id": "vendor-assurance.workflow.due-diligence-complete",
+      "label": "Due Diligence Complete",
+      "description": "Synthetic Policy IR material for due diligence complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.workflow.assurance-evidence-current",
+      "label": "Assurance Evidence Current",
+      "description": "Synthetic Policy IR material for assurance evidence current.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.workflow.remediation-overdue-count",
+      "label": "Remediation Overdue Count",
+      "description": "Synthetic Policy IR material for remediation overdue count.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "vendor-assurance.obligation.due-diligence-complete",
+      "label": "Due Diligence Complete",
+      "description": "Synthetic Policy IR material for due diligence complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.obligation.assurance-evidence-current",
+      "label": "Assurance Evidence Current",
+      "description": "Synthetic Policy IR material for assurance evidence current.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.obligation.remediation-overdue-count",
+      "label": "Remediation Overdue Count",
+      "description": "Synthetic Policy IR material for remediation overdue count.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "vendor-assurance.evidence.due-diligence-complete",
+      "label": "Due Diligence Complete",
+      "description": "Synthetic Policy IR material for due diligence complete.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.evidence.assurance-evidence-current",
+      "label": "Assurance Evidence Current",
+      "description": "Synthetic Policy IR material for assurance evidence current.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    },
+    {
+      "id": "vendor-assurance.evidence.remediation-overdue-count",
+      "label": "Remediation Overdue Count",
+      "description": "Synthetic Policy IR material for remediation overdue count.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/vendor-assurance-reference-min.json"
+      }
+    }
+  ],
   "permissions": [],
   "surfaces": [],
   "migrations": [],
-  "tests": []
+  "tests": [
+    {
+      "id": "vendor-assurance.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
 }

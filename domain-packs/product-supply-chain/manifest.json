@@ -1,0 +1,57 @@
+{
+  "id": "product-supply-chain",
+  "name": "Product and Supply-Chain Compliance",
+  "version": "0.1.0",
+  "vertical": "product_supply_chain",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "product-supply-chain.workflow.supplier-conformity-confirmed",
+      "label": "Supplier Conformity Confirmed",
+      "description": "Synthetic Policy IR material for supplier conformity confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/product-supply-chain-reference-min.json"
+      }
+    }
+  ],
+  "obligations": [
+    {
+      "id": "product-supply-chain.obligation.supplier-conformity-confirmed",
+      "label": "Supplier Conformity Confirmed",
+      "description": "Synthetic Policy IR material for supplier conformity confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/product-supply-chain-reference-min.json"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "product-supply-chain.evidence.supplier-conformity-confirmed",
+      "label": "Supplier Conformity Confirmed",
+      "description": "Synthetic Policy IR material for supplier conformity confirmed.",
+      "ref": {
+        "type": "policy-ir-example",
+        "target": "policy-ir/examples/product-supply-chain-reference-min.json"
+      }
+    }
+  ],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "product-supply-chain.test.reference-model",
+      "label": "Reference model test",
+      "description": "Cross-domain reference-model test.",
+      "ref": {
+        "type": "node-test",
+        "target": "tests/domain-pack-reference-model.test.js"
+      }
+    }
+  ]
+}
