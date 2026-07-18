@@ -1,0 +1,17 @@
+{
+  "id": "vendor-assurance",
+  "name": "Vendor Assurance",
+  "version": "0.1.0",
+  "vertical": "vendor_assurance",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": []
+}

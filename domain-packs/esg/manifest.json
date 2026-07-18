@@ -1,0 +1,17 @@
+{
+  "id": "esg",
+  "name": "Environmental, Social, and Governance",
+  "version": "0.1.0",
+  "vertical": "esg",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": []
+}

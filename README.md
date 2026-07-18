@@ -6,8 +6,6 @@ It is pre-release software. It does not provide legal advice, certify compliance
 
 ## Public release scope
 
-This repository currently publishes the stable canonical path:
-
 ```text
 authoritative sources
 → typed Policy IR
@@ -19,13 +17,15 @@ authoritative sources
 
 The current release includes:
 
-- the Policy IR package and artifact contract;
-- declarative predicate validation;
+- Policy IR package and artifact validation;
+- declarative, typed predicate semantics;
+- execution-class and bounded-decision contracts;
 - deterministic bundle compilation and hashing;
 - a fail-closed native reference evaluator;
-- bounded decision outcomes;
 - the existing domain-pack manifest structure;
-- a DPM reference package;
+- a runnable DPM reference package;
+- experimental donor-main manifests for cybersecurity, vendor assurance, AI governance, ESG and KYC;
+- normative Policy-as-Code documents;
 - public tests and GitHub-hosted CI.
 
 A policy decision does not mutate authoritative state. Enforcement, connectors, generated workspaces and production deployment are outside the current release boundary.
@@ -39,11 +39,6 @@ npm install
 npm test
 npm run policy-ir:validate
 npm run domain-pack:strict
-```
-
-Compile and evaluate the included DPM example:
-
-```bash
 npm run demo
 ```
 
@@ -52,19 +47,18 @@ npm run demo
 - `policy-ir/` — canonical Policy IR schema, validation and examples.
 - `packages/policy-compiler/` — deterministic canonical compiler.
 - `packages/policy-evaluator/` — native fail-closed reference evaluator.
-- `packages/domain-pack-loader/` — domain-pack manifest loading and strict reference validation.
+- `packages/domain-pack-loader/` — strict domain-pack manifest loading.
 - `decision-effect/` — bounded decision contract.
 - `execution-classes/` — automation-authority taxonomy.
-- `domain-packs/` — governed domain content, separate from the substrate.
-- `tests/` — positive, negative and deterministic checks.
+- `domain-packs/` — governed domain content, separate from substrate mechanics.
+- `docs/policy/` — normative Policy-as-Code contracts.
+- `tests/` — positive, negative, tamper and boundary checks.
 
-## Architectural commitments
+Read `COMPLIANCE_OS_CONSTITUTION.md`, then `docs/policy/README.md`.
 
-Read `COMPLIANCE_OS_CONSTITUTION.md` first. The core commitments include typed authority, compiler/evaluator separation, immutable decisions, explicit failure states, evidence provenance and bounded automation authority.
+## Contribution and security
 
-## Contributing
-
-See `CONTRIBUTING.md`. Contributions must preserve the existing authority boundaries and include tests for changed behavior.
+See `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` and `SECURITY.md`.
 
 ## Licence
 
