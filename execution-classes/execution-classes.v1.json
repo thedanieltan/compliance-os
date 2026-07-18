@@ -1,0 +1,35 @@
+{
+  "schema_version": "policy-execution-classes.v1",
+  "classes": [
+    {
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "description": "Reference material that cannot produce an operational decision.",
+      "permitted_decisions": ["NO_AUTHORITATIVE_DECISION"]
+    },
+    {
+      "class": "DETERMINISTIC",
+      "description": "A complete declarative predicate produces a bounded deterministic result.",
+      "permitted_decisions": ["PASS", "FAIL", "NOT_APPLICABLE", "INSUFFICIENT_INFORMATION", "FACT_CONFLICT", "POLICY_CONFLICT", "ERROR"]
+    },
+    {
+      "class": "DETERMINISTIC_WITH_APPROVAL",
+      "description": "A deterministic result requires approval before enforcement.",
+      "permitted_decisions": ["PASS", "FAIL", "NOT_APPLICABLE", "INSUFFICIENT_INFORMATION", "REQUIRE_APPROVAL", "ERROR"]
+    },
+    {
+      "class": "ATTESTATION_REQUIRED",
+      "description": "The decision requires an accountable attestation.",
+      "permitted_decisions": ["REQUIRE_ATTESTATION", "INSUFFICIENT_INFORMATION", "ERROR"]
+    },
+    {
+      "class": "HUMAN_DECISION_REQUIRED",
+      "description": "Automation may prepare material but a human must decide.",
+      "permitted_decisions": ["HUMAN_DECISION_REQUIRED", "INSUFFICIENT_INFORMATION", "ERROR"]
+    },
+    {
+      "class": "PROHIBITED_AUTOMATION",
+      "description": "Automated decision-making is prohibited.",
+      "permitted_decisions": ["PROHIBITED_AUTOMATION"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dpm",
+  "name": "Data Protection Management",
+  "version": "0.1.0",
+  "vertical": "data_protection_management",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [
+    {
+      "id": "dpm.workflow.ropa-completeness",
+      "label": "RoPA completeness",
+      "description": "Evaluate whether the required RoPA facts are complete.",
+      "ref": { "type": "policy-ir-example", "target": "policy-ir/examples/dpm-ropa-completeness-min.json" }
+    }
+  ],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": [
+    {
+      "id": "dpm.test.ropa-completeness",
+      "label": "RoPA completeness reference test",
+      "description": "Compiles and evaluates the RoPA completeness Policy IR example.",
+      "ref": { "type": "node-test", "target": "tests/policy-core.test.js" }
+    }
+  ]
+}
