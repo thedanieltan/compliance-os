@@ -11,9 +11,12 @@ Available now:
 - deterministic compiled bundle and content hash;
 - native fail-closed reference evaluator;
 - bounded decisions with decision hashes;
-- DPM reference package;
-- experimental donor-main manifests for cybersecurity, vendor assurance, AI governance, ESG and KYC;
-- GitHub-hosted CI.
+- neutral requirement, obligation, assessment, finding and remediation records;
+- evidence provenance, independent review, expiry and supersession;
+- approval authority, dual control and audit-event binding;
+- 20 strict-loadable domain packs with synthetic OPEN Policy IR reference material;
+- deterministic cross-domain tests;
+- public-release validation and GitHub-hosted CI.
 
 Not yet included in the public release:
 
@@ -21,7 +24,6 @@ Not yet included in the public release:
 - governed enforcement and authoritative mutation;
 - live connectors;
 - application shells and generated workspaces;
-- restricted standards content;
-- unmerged donor work.
+- restricted standards content.
 
 The software does not provide legal advice or certify compliance.
