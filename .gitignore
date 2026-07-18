@@ -1,0 +1,21 @@
+node_modules
+.env
+.env.local
+.DS_Store
+dist
+coverage
+tmp
+*.log
+.claude/
+
+# Local secrets / credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials.*
+service-account*.json
