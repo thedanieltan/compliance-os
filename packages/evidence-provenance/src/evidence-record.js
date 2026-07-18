@@ -1,5 +1,5 @@
-import { createHash } from "node:crypto";
 import { createEvidenceReview, EVIDENCE_LIFECYCLE_STATUSES } from "./evidence-review.js";
+import { computeEvidenceDigest, withEvidenceIntegrity } from "./evidence-hash.js";
 
 const CLASSES = ["document_reference", "attestation", "system_observation", "connector_observation", "manual_observation", "configuration_snapshot", "log_excerpt", "test_result", "assessment_result", "metric", "certificate", "training_record", "approval_record", "compiler_artifact", "report_artifact"];
 const SOURCE_TYPES = ["manual", "connector", "api", "import", "upload", "system", "compiler", "agent", "sidecar", "external_url"];
@@ -7,8 +7,6 @@ const COLLECTOR_TYPES = ["human", "service", "connector", "agent", "system", "co
 const refs = (value) => Object.freeze([...new Set((value ?? []).filter(Boolean))]);
 function explicit(value, label) { if (typeof value !== "string" || value.trim() === "" || value === "unknown") throw new Error(`${label} must be explicitly provided`); }
 function assertTime(value, label, required = false) { if (value == null) { if (required) throw new Error(`${label} is required`); return; } if (typeof value !== "string" || Number.isNaN(Date.parse(value))) throw new Error(`${label} must be an RFC3339 timestamp`); }
-function sealed(evidence) { return { id: evidence.id, evidenceClass: evidence.evidenceClass, workspaceId: evidence.workspaceId, source: evidence.source, collection: evidence.collection, scope: evidence.scope, assertion: evidence.assertion, validity: evidence.validity, derivation: evidence.derivation }; }
-function digest(value) { return `sha256:${createHash("sha256").update(JSON.stringify(value)).digest("hex")}`; }
 export function createEvidenceRecord(input = {}) {
   if (!input.id) throw new Error("evidence id is required");
   explicit(input.source?.sourceType, "evidence sourceType"); explicit(input.collection?.collectedAt, "evidence collectedAt"); explicit(input.collection?.collectedBy, "evidence collectedBy"); explicit(input.collection?.collectionMethod, "evidence collectionMethod"); explicit(input.collection?.collectorType, "evidence collectorType");
@@ -27,7 +25,7 @@ export function createEvidenceRecord(input = {}) {
     lifecycle: Object.freeze({ status: input.lifecycle?.status ?? "active", createdAt, updatedAt: input.lifecycle?.updatedAt ?? createdAt }),
     derivation: Object.freeze({ generatedBy: input.derivation?.generatedBy ?? null, derivedFrom: refs(input.derivation?.derivedFrom) })
   };
-  const evidence = Object.freeze({ ...core, integrity: Object.freeze({ algorithm: "sha256", digest: digest(sealed(core)) }) });
+  const evidence = withEvidenceIntegrity(core);
   validateEvidenceRecord(evidence);
   return evidence;
 }
@@ -41,6 +39,6 @@ export function validateEvidenceRecord(evidence) {
   if (evidence.validity.staleAt && Date.parse(evidence.validity.staleAt) < Date.parse(evidence.validity.validFrom)) throw new Error("evidence staleAt cannot precede validFrom");
   if (evidence.lifecycle.status === "superseded" && (evidence.review.reviewStatus !== "superseded" || !evidence.validity.supersededBy)) throw new Error("superseded evidence requires aligned state and supersededBy");
   if (evidence.lifecycle.status === "expired" && (evidence.review.reviewStatus !== "expired" || !evidence.validity.expiryReason)) throw new Error("expired evidence requires aligned state and expiryReason");
-  if (evidence.integrity?.digest !== digest(sealed(evidence))) throw new Error("evidence integrity verification failed");
+  if (evidence.integrity?.digest !== computeEvidenceDigest(evidence)) throw new Error("evidence integrity verification failed");
   return true;
 }
