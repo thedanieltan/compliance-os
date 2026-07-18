@@ -16,18 +16,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm install
-      - name: Run tests
-        id: tests
-        continue-on-error: true
-        run: node --test --test-reporter=spec tests/*.test.js > test-output.txt 2>&1
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: test-output
-          path: test-output.txt
-      - name: Enforce test result
-        if: steps.tests.outcome == 'failure'
-        run: exit 1
+      - run: npm test
       - run: npm run policy-ir:validate
       - run: npm run domain-pack:validate
       - run: npm run domain-pack:strict
