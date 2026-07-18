@@ -1,0 +1,17 @@
+{
+  "id": "ai-governance",
+  "name": "AI Governance",
+  "version": "0.1.0",
+  "vertical": "ai_governance",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cyber",
+  "name": "Cybersecurity Governance",
+  "version": "0.1.0",
+  "vertical": "cybersecurity",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": []
+}

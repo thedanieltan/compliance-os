@@ -1,0 +1,17 @@
+{
+  "id": "kyc",
+  "name": "Know Your Customer",
+  "version": "0.1.0",
+  "vertical": "kyc",
+  "status": "experimental",
+  "records": [],
+  "capabilities": [],
+  "schemas": [],
+  "workflows": [],
+  "obligations": [],
+  "evidence": [],
+  "permissions": [],
+  "surfaces": [],
+  "migrations": [],
+  "tests": []
+}
