@@ -87,6 +87,16 @@ export function validatePolicyIrPackage(pkg) {
         errors.push(`${artifact.artifact_id}: reference to stricter licensed artifact ${reference.ref}`);
       }
     }
+
+    if (artifact.artifact_type === "EVIDENCE_CONTRACT") {
+      const requiredTargets = (artifact.references ?? []).filter((reference) => reference.required === true);
+      const validTarget = requiredTargets.some((reference) => {
+        const target = byId.get(reference.ref);
+        return (target?.artifact_type === "CONTROL" && reference.relation === "assesses") ||
+          (target?.artifact_type === "DECISION_SCHEMA" && reference.relation === "supports");
+      });
+      if (!validTarget) errors.push(`${artifact.artifact_id}: evidence contract requires a CONTROL/assesses or DECISION_SCHEMA/supports target`);
+    }
   }
   if (detectCycle(adjacency)) errors.push("reference cycle detected");
   return { ok: errors.length === 0, errors, warnings };

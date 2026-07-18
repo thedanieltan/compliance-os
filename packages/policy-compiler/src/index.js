@@ -1,10 +1,17 @@
 import { validatePolicyIrPackage } from "../../../policy-ir/lib/validate.js";
 import { validatePredicateLeafTypes } from "../../../policy-ir/lib/rule-predicate.js";
+import { EXECUTION_CLASSES } from "../../../execution-classes/lib/validate.js";
 import { canonicalize } from "./canonical-json.js";
 import { sha256Digest } from "./input-fingerprint.js";
 
 export const COMPILED_POLICY_BUNDLE_KIND = "compiled_policy_bundle";
 export const COMPILED_POLICY_BUNDLE_SCHEMA_VERSION = "compiled-policy-bundle.v1";
+
+function compareStrings(left, right) {
+  if (left < right) return -1;
+  if (left > right) return 1;
+  return 0;
+}
 
 export function computeCompiledBundleHash(bundle) {
   const { bundle_hash, ...payload } = bundle;
@@ -16,7 +23,11 @@ export function verifyCompiledBundleHash(bundle) {
 }
 
 function fail(diagnostics) {
-  return Object.freeze({ ok: false, diagnostics: canonicalize([...diagnostics].sort()), bundle: null });
+  return Object.freeze({
+    ok: false,
+    diagnostics: canonicalize([...diagnostics].sort((a, b) => compareStrings(JSON.stringify(a), JSON.stringify(b)))),
+    bundle: null
+  });
 }
 
 export function compilePolicyPackage(pkg) {
@@ -30,6 +41,7 @@ export function compilePolicyPackage(pkg) {
   for (const rule of pkg.artifacts.filter((artifact) => artifact.artifact_type === "POLICY_RULE")) {
     const predicate = rule.body?.predicate;
     const executionClass = rule.body?.execution_class ?? "NON_EXECUTABLE_REFERENCE";
+    if (!EXECUTION_CLASSES.has(executionClass)) diagnostics.push({ code: "EXECUTION_CLASS_INVALID", severity: "BLOCKING", message: `${rule.artifact_id}: unsupported execution class ${executionClass}` });
     if (predicate) {
       const typeErrors = validatePredicateLeafTypes(predicate, (factRef) => {
         const fact = byId.get(factRef);
@@ -40,7 +52,7 @@ export function compilePolicyPackage(pkg) {
     const consumedFacts = (rule.references ?? [])
       .filter((reference) => reference.relation === "consumes")
       .map((reference) => reference.ref)
-      .sort();
+      .sort(compareStrings);
     for (const factRef of consumedFacts) {
       if (byId.get(factRef)?.artifact_type !== "FACT_DEFINITION") diagnostics.push({ code: "FACT_REFERENCE_INVALID", severity: "BLOCKING", message: `${rule.artifact_id}: ${factRef} is not a FACT_DEFINITION` });
     }
@@ -59,9 +71,9 @@ export function compilePolicyPackage(pkg) {
     schema_version: COMPILED_POLICY_BUNDLE_SCHEMA_VERSION,
     compiler: { name: "compliance-os.policy-compiler", version: "0.1.0" },
     package_manifest: pkg.package_manifest,
-    canonical_artifacts: [...pkg.artifacts].sort((a, b) => a.artifact_id.localeCompare(b.artifact_id)),
-    adapter_neutral_plan: plan.sort((a, b) => a.rule_ref.localeCompare(b.rule_ref)),
-    diagnostics
+    canonical_artifacts: [...pkg.artifacts].sort((a, b) => compareStrings(a.artifact_id, b.artifact_id)),
+    adapter_neutral_plan: plan.sort((a, b) => compareStrings(a.rule_ref, b.rule_ref)),
+    diagnostics: diagnostics.sort((a, b) => compareStrings(JSON.stringify(a), JSON.stringify(b)))
   });
   const bundle = Object.freeze({ ...payload, bundle_hash: sha256Digest(payload) });
   return Object.freeze({ ok: true, diagnostics: bundle.diagnostics, bundle });
