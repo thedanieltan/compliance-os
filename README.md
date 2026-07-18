@@ -1,60 +1,71 @@
 # Compliance OS
 
-Compliance OS is an open compliance substrate for building domain-specific compliance systems without embedding domain semantics into the core runtime.
+Compliance OS is an open-source, domain-neutral substrate for representing, compiling and evaluating compliance policy as typed, versioned and provenance-bearing data.
 
-It provides neutral backend primitives for:
+It is pre-release software. It does not provide legal advice, certify compliance or replace accountable human review.
 
-- canonical records;
-- permissioned capabilities;
-- audit events;
-- evidence provenance;
-- framework mappings;
-- domain-pack manifests;
-- connector contracts;
-- regulatory-update primitives;
-- agent-safe execution;
-- canonical Policy-as-Code semantics.
+## Public release scope
 
-Data protection management is the first flagship domain, not the whole system.
-
-## Status
-
-This public repository is being populated from the validated Compliance OS substrate. The initial extraction is intentionally staged so private development history, private integrations, credentials, generated evidence, and unreviewed work are not copied into the public repository.
-
-The project is not production-ready.
-
-## Architecture
-
-The canonical policy path is:
+This repository currently publishes the stable canonical path:
 
 ```text
 authoritative sources
 → typed Policy IR
 → canonical policy compiler
-→ signed compiled bundle
-→ conformant evaluator
-→ decision + proposed effects
+→ bounded policy decision
+→ proposed effects
 → governed enforcement point
-→ authoritative mutation
-→ audit event
 ```
 
-Domain-packs own domain vocabulary and interpretation. The substrate owns neutral records, runtime contracts, provenance, authority, lifecycle, decisions, proposed effects, and auditability.
+The current release includes:
 
-## Public extraction status
+- the Policy IR package and artifact contract;
+- declarative predicate validation;
+- deterministic bundle compilation and hashing;
+- a fail-closed native reference evaluator;
+- bounded decision outcomes;
+- the existing domain-pack manifest structure;
+- a DPM reference package;
+- public tests and GitHub-hosted CI.
 
-The first public release will include only material that has passed:
+A policy decision does not mutate authoritative state. Enforcement, connectors, generated workspaces and production deployment are outside the current release boundary.
 
-- public-boundary review;
-- licensing and provenance review;
-- secret and private-reference review;
-- repository tests and manifest validation;
-- Policy IR and governance validation.
+## Quickstart
+
+Requires Node.js 20 or later.
+
+```bash
+npm install
+npm test
+npm run policy-ir:validate
+npm run domain-pack:strict
+```
+
+Compile and evaluate the included DPM example:
+
+```bash
+npm run demo
+```
+
+## Repository structure
+
+- `policy-ir/` — canonical Policy IR schema, validation and examples.
+- `packages/policy-compiler/` — deterministic canonical compiler.
+- `packages/policy-evaluator/` — native fail-closed reference evaluator.
+- `packages/domain-pack-loader/` — domain-pack manifest loading and strict reference validation.
+- `decision-effect/` — bounded decision contract.
+- `execution-classes/` — automation-authority taxonomy.
+- `domain-packs/` — governed domain content, separate from the substrate.
+- `tests/` — positive, negative and deterministic checks.
+
+## Architectural commitments
+
+Read `COMPLIANCE_OS_CONSTITUTION.md` first. The core commitments include typed authority, compiler/evaluator separation, immutable decisions, explicit failure states, evidence provenance and bounded automation authority.
+
+## Contributing
+
+See `CONTRIBUTING.md`. Contributions must preserve the existing authority boundaries and include tests for changed behavior.
 
 ## Licence
 
-A project licence has not yet been selected. Until a licence is added, the repository is publicly readable but no permission is granted to copy, modify, or redistribute its contents.
-
-## Security
-
-Do not report security vulnerabilities through public issues. A security policy will be added before the first code release.
+Apache License 2.0. See `LICENSE` and `NOTICE`.

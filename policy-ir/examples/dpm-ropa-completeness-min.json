@@ -1,0 +1,100 @@
+{
+  "package_manifest": {
+    "package_id": "dpm-ropa-completeness-min",
+    "version": "0.1.0",
+    "schema_version": "policy-ir.v1",
+    "publisher": "compliance-os",
+    "licensing": { "class": "OPEN" },
+    "dependencies": []
+  },
+  "artifacts": [
+    {
+      "artifact_id": "dpm:fact.ropa-complete",
+      "artifact_type": "FACT_DEFINITION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN fact definition for the public reference package.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": { "class": "OPEN" },
+      "body": { "value_type": "BOOLEAN" }
+    },
+    {
+      "artifact_id": "dpm:obligation.maintain-ropa",
+      "artifact_type": "OBLIGATION",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "provenance": "Synthetic OPEN obligation for the public reference package.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": { "class": "OPEN" }
+    },
+    {
+      "artifact_id": "dpm:control.ropa-completeness",
+      "artifact_type": "CONTROL",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "references": [
+        { "ref": "dpm:obligation.maintain-ropa", "required": true, "relation": "operationalizes" }
+      ],
+      "provenance": "Synthetic OPEN control for the public reference package.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": { "class": "OPEN" }
+    },
+    {
+      "artifact_id": "dpm:evidence.ropa-completeness",
+      "artifact_type": "EVIDENCE_CONTRACT",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "references": [
+        { "ref": "dpm:control.ropa-completeness", "required": true, "relation": "assesses" }
+      ],
+      "provenance": "Synthetic OPEN evidence contract for the public reference package.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": { "class": "OPEN" }
+    },
+    {
+      "artifact_id": "dpm:rule.ropa-completeness",
+      "artifact_type": "POLICY_RULE",
+      "schema_version": "policy-ir.v1",
+      "artifact_version": "1.0.0",
+      "status": "ACTIVE",
+      "publisher_ref": "compliance-os",
+      "source_refs": [],
+      "references": [
+        { "ref": "dpm:fact.ropa-complete", "required": true, "relation": "consumes" },
+        { "ref": "dpm:control.ropa-completeness", "required": true, "relation": "assesses" }
+      ],
+      "provenance": "Deterministic synthetic OPEN rule for the public reference package.",
+      "valid_from": null,
+      "valid_to": null,
+      "content_hash": null,
+      "licensing": { "class": "OPEN" },
+      "body": {
+        "execution_class": "DETERMINISTIC",
+        "predicate": {
+          "predicate_schema_version": "policy-rule-predicate.v1",
+          "assertion": { "fact": "dpm:fact.ropa-complete", "operator": "IS_TRUE" }
+        }
+      }
+    }
+  ]
+}

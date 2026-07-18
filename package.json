@@ -1,0 +1,18 @@
+{
+  "name": "compliance-os",
+  "version": "0.1.0",
+  "description": "Domain-neutral Policy-as-Code substrate for compliance state and bounded decisions.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "private": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "policy-ir:validate": "node scripts/validate-policy-ir.js",
+    "domain-pack:validate": "node scripts/validate-manifests.js --domain-packs-only",
+    "domain-pack:strict": "node scripts/validate-manifests.js --strict-domain-packs",
+    "demo": "node examples/policy-evaluation-demo.js"
+  }
+}
